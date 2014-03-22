@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+    <!--bootstrap-->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!--<link href="http://cdn.kendostatic.com/2013.3.1324/styles/kendo.common-bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.kendostatic.com/2013.3.1324/styles/kendo.uniform.min.css" rel="stylesheet">-->
+
+    <!--styles-->
+
+    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kmSite.css" rel="stylesheet" />
+    <link href="font-awesome-4.0.3/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="styles/main.css" rel="stylesheet" />
+
+
+    <!--scripts-->
+	<script src="cordova.js"></script>
+	<script src="kendo/js/jquery.min.js"></script>
+    <!--<script src="kendo/js/kendo.all.min.js"></script>-->
+    <script src="http://cdn.kendostatic.com/2013.3.1324/js/kendo.all.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+
+    <!--bootstrap-->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+	<script src="scripts/login.js"></script>
+	<script src="scripts/location.js"></script>
+	<script src="scripts/weather.js"></script>
+	<script src="scripts/app.js"></script>
+
+</head>
+<body>
+	<!--Home-->
+	<div id="tabstrip-home"
+		data-role="view"
+		data-title="CELGENE Bureau" data-stretch="true">
+
+        <table class="allCenter" width="80%"">
+                <tr>
+                    <td align="left">
+                        <a data-align="left" data-icon="calendar" data-role="button" href="views/ERO.html" class="nav-button km-widget km-button">Schedule / Request New Program</a>
+                    </td>
+                    <td align="right">
+                        <a data-align="right" data-icon="pencil" data-role="button" href="views/ERF.html" class="nav-button km-widget km-button">Register an attendee</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <a data-icon="signin" data-role="button" href="views/signinsheet" class="nav-button km-widget km-button">Electronic Sign in Sheet</a>
+                    </td>
+                </tr>
+            </table>
+
+	</div>
+
+	<!--Login-->
+	<!--<div id="tabstrip-login"
+		data-role="view"
+		data-title="Login"
+		data-model="app.loginService.viewModel">
+
+		<div class="view-content">
+			<div class="logo"></div>
+			<h3 data-bind="invisible: isLoggedIn">Enter your credentials:</h3>
+			<h1 class="welcome" data-bind="visible: isLoggedIn">Welcome, <span data-bind="text: username"></span>!
+			</h1>
+			<div class="buttonArea">
+				<input type="submit" id="logout" data-role="button" data-bind="click: onLogout, visible: isLoggedIn" class="login-button" value="Logout" />
+			</div>
+
+			<form data-bind="events: { keyup: checkEnter }">
+				<ul data-role="listview" data-style="inset" data-bind="invisible: isLoggedIn">
+					<li>
+						<label>
+							Username
+								<input type="text" data-bind="value: username" />
+						</label>
+					</li>
+					<li>
+						<label>
+							Password
+								<input type="password" data-bind="value: password" />
+						</label>
+					</li>
+				</ul>
+
+				<div class="buttonArea">
+					<input type="submit" id="login" data-role="button" data-bind="click: onLogin, invisible: isLoggedIn" class="login-button" value="Login" />
+				</div>
+			</form>
+		</div>
+
+	</div>-->
+
+
+	<!--Events-->
+	<div id="tabstrip-calendar"
+		data-role="view"
+		data-title="Location"
+		data-init="app.locationService.initLocation"
+		data-show="app.locationService.show"
+		data-hide="app.locationService.hide"
+		data-model="app.locationService.viewModel"
+		data-stretch="true">
+
+		<div id="no-map" data-bind="invisible: isGoogleMapsInitialized">
+			Location requires internet connection to display the map.
+		</div>
+		<div id="map-search-wrap" data-bind="visible: isGoogleMapsInitialized">
+			<button id="map-navigate-home" data-bind="click: onNavigateHome"></button>
+			<form onsubmit="return false;">
+				<input id="map-address" type="search" data-bind="value: address" placeholder="Address" />
+				<input id="map-search" type="submit" value="" data-bind="click: onSearchAddress" />
+			</form>
+		</div>
+		<div id="map-canvas" data-bind="visible: isGoogleMapsInitialized"></div>
+
+	</div>
+
+	<!--Speakers-->
+	<div id="tabstrip-speakers"
+		data-role="view"
+		data-title="Weather"
+		data-model="app.weatherService.viewModel">
+
+		<div class="weather">
+			<p class="weather-title">20-Day Forecast</p>
+
+			<div class="separator">
+				<div class="dark"></div>
+				<div class="light"></div>
+			</div>
+
+			<ul class="forecast-list"
+				data-role="listview"
+				data-bind="source: weatherDataSource"
+				data-template="weather-forecast-template">
+			</ul>
+		</div>
+	</div>
+
+    <!--Resources-->
+    <div id="tabstrip-resources"
+		data-role="view"
+		data-title="Location"
+		data-init="app.locationService.initLocation"
+		data-show="app.locationService.show"
+		data-hide="app.locationService.hide"
+		data-model="app.locationService.viewModel"
+		data-stretch="true">
+
+		<div id="Div2" data-bind="invisible: isGoogleMapsInitialized">
+			Location requires internet connection to display the map.
+		</div>
+		<div id="Div3" data-bind="visible: isGoogleMapsInitialized">
+			<button id="Button1" data-bind="click: onNavigateHome"></button>
+			<form onsubmit="return false;">
+				<input id="Search1" type="search" data-bind="value: address" placeholder="Address" />
+				<input id="Submit1" type="submit" value="" data-bind="click: onSearchAddress" />
+			</form>
+		</div>
+		<div id="Div4" data-bind="visible: isGoogleMapsInitialized"></div>
+
+	</div>
+	<!--Weather forecast template-->
+	<script type="text/x-kendo-tmpl" id="weather-forecast-template">
+		<div>
+			<div class="position-left">
+				<span class="weather-info date">${day}</span>
+			</div>
+			<div class="position-right">
+				<span class="weather-info temperature high">${highTemperature}<sup>&deg;</sup></span>
+				<span class="weather-info temperature low">${lowTemperature}<sup>&deg;</sup></span>
+			</div>
+			<div class="position-center">
+				<span class="weather-icon ${image}"></span>
+			</div>
+		</div>
+	</script>
+
+	<!--Layout-->
+	<div data-role="layout" data-id="tabstrip-layout" data-stretch="true">
+
+		<!--Header-->
+		<div data-role="header">
+			<div data-role="navbar">
+                <a data-align="left" data-role="button" href="#" class="nav-button km-widget km-button">More...</a>
+				<span data-role="view-title"></span>
+                <a data-align="right" data-role="button" href="#" class="nav-button km-widget km-button">Log Off</a>
+			</div>
+            
+		</div>
+
+		<!--Footer-->
+		<div data-role="footer">
+			<div data-role="tabstrip">
+				<a href="#tabstrip-home" data-icon="home-alt">Home</a>
+				<a href="#tabstrip-calendar" data-icon="calendar">My Events</a>
+				<a href="#tabstrip-speakers" data-icon="speakers">Speakers</a>
+				<a href="#tabstrip-resources" data-icon="globe">Resources</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

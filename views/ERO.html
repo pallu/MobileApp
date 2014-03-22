@@ -1,0 +1,206 @@
+﻿    <div data-role="view" id="eroView" data-title="ERO" layout="tabstrip-layout" data-init="initForm" ><!--data-init="listViewCardsInit" data-model="cardsViewModel">-->
+    <div data-role="content" class="km-content km-widget km-scroll-wrapper km-insetcontent">
+        <div class="km-scroll-header"></div>
+        <div class="km-scroll-container" style="-webkit-transform-origin: 0% 0%;">
+            <div class="head">&nbsp;</div>
+            <ul data-index="0" data-role="buttongroup" data-select="onSelect" id="select-erostep" class="km-widget km-buttongroup">
+                <li class="km-button km-state-active"><span class="km-text">1</span></li>
+                <li class="km-button"><span class="km-text">2</span></li>
+                <li class="km-button"><span class="km-text">3</span></li>
+                <li class="km-button"><span class="km-text">4</span></li>
+            </ul>
+            <form>
+            <!--<div class="km-listview-wrapper" id="divStep1">-->
+                <ul id="divStep1" data-role="listview" data-style="inset" class="km-widget km-listview km-list km-listinset">
+                    <li>
+                        <label>
+                            Tactic
+                                    <select class="form-control">
+                                        <option value="100">First Tactic</option>
+                                        <option value="102">Second Tactic</option>
+                                        <option value="103">Third Tactic</option>
+                                        <option value="104">Fourth Tactic</option>
+                                    </select>
+                        </label>
+                    </li>
+                    <li>
+                        <label></label>
+                    </li>
+                    <li>
+                        <label>
+                            Curriculum / Module
+                                <select class="form-control">
+                                    <option value="100">First Curriculum</option>
+                                    <option value="102">Second Curriculum</option>
+                                    <option value="103">Third Curriculum</option>
+                                    <option value="104">Fourth Curriculum</option>
+                                </select>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            Additional Modules
+                                <select class="form-control">
+                                    <option value="100">First Module</option>
+                                    <option value="102">Second Module</option>
+                                    <option value="103">Third Module</option>
+                                    <option value="104">Fourth Module</option>
+                                </select>
+                        </label>
+                    </li>
+                </ul>
+            <!--</div>-->
+            <div class="km-listview-wrapper" id="divStep2">
+                <ul data-role="listview" data-style="inset" style="display: none" class="km-widget km-listview km-list km-listinset">
+                    <li>
+                        <label>
+                            Driver
+                                
+                                    <select k-option-label="Select Driver" class="form-control">
+                                        <option value="Date">Date</option>
+                                        <option value="Speaker">Speaker</option>
+                                    </select>
+                        </label>
+
+                    </li>
+                    <li>
+                        <label>
+                           Event Type
+                            <!--<select class="form-control">
+                                <option value="Live">Live Program</option>
+                                <option value="Webcast">Webcast Program</option>
+                            </select>-->
+                            <div class="text-right">
+                            <label class="radio-inline">
+                                <input type="radio" name="EventType" id="eventTypeLive" value="Live" style="position:relative;margin-top:0px;"> Live
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="EventType" id="eventTypeWebcast" value="Webcast" style="position:relative;margin-top:0px;"> Webcast
+                            </label>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            Counterpart
+                                <select class="form-control">
+                                    <option value="100">Counterpart 1</option>
+                                    <option value="102">Counterpart 2</option>
+                                    <option value="103">Counterpart 3</option>
+                                    <option value="104">Counterpart 4</option>
+                                </select>
+                        </label>
+                    </li>
+                    <li><hr /></li>
+                    <li>
+                        <label>
+                            Date 1
+                                <input type="date" id="Date1" />
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            Date 2
+                                <input type="date" id="Date2" />
+                        </label>
+                    </li>
+                    <li>
+                        <label>Program Type
+                            <select>
+                                <option value="OutOfOffice">Out of Office</option>
+                                <option value="InOffice">In Office</option>
+                                <option value="NoVenue">No Venue</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li>
+                        <label>Anticipated Maximum Number Of Attendees
+                            <input type="number" min="0" />
+                        </label>
+                    </li>
+                    <li>
+                        <label>Speaker 1
+                            <select>
+                                <option value="Speaker1">Speaker 1</option>
+                                <option value="Speaker2">Speaker 2</option>
+                                <option value="Speaker3">Speaker 3</option>
+                            </select>
+                        </label>
+                    </li>
+                     <li>
+                        <label>Speaker 2
+                            <select>
+                                <option value="Speaker1">Speaker 1</option>
+                                <option value="Speaker2">Speaker 2</option>
+                                <option value="Speaker3">Speaker 3</option>
+                            </select>
+                        </label>
+                    </li>
+                     <li>
+                        <label>Travel/Lodging
+                            <select>
+                                <option>Speaker travel lodging arrangements not required</option>
+                                <option>Please arrange speaker travel/lodging arrangement</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li>
+                        <label>Please provide information for a suggested hotel if required</label>
+                        <div class="row">
+                            <div class="col-xs-6 well">
+                                <div class="form-group">
+                                        <input type="text" placeholder="Name of hotel" class="form-control" style="position:relative;width:100%;" />
+                                    </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Address" class="form-control" style="position:relative;width:100%;" />
+                                </div>
+                                <div class="fprm-group">
+                                    <input type="text" placeholder="City" class="form-control" style="position:relative;width:100%;" />
+                                </div>
+
+                            </div>
+                            <div class="col-xs-6 panel">col 2</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="km-listview-wrapper" id="divStep3">
+                <ul data-role="listview" data-style="inset" style="display: none" class="km-widget km-listview km-list km-listinset">
+                    <li>2009 <span class="sales-up">↑ $ 120,000</span></li>
+                    <li>2010 <span class="sales-down">↓ $ 109,000</span></li>
+                    <li>2011 <span class="sales-hold">→ $ 109,000</span></li>
+                </ul>
+
+            </div>
+            </form>
+        </div>
+        <div class="km-touch-scrollbar km-horizontal-scrollbar" style="-webkit-transform-origin: 0% 0%;"></div>
+        <div class="km-touch-scrollbar km-vertical-scrollbar" style="-webkit-transform-origin: 0% 0%;"></div>
+    </div>
+    <div style="height: 100%; width: 100%; position: absolute; top: 0; left: 0; z-index: 20000; display: none"></div>
+</div>
+<script>
+
+    function onSelect() {
+        var listviews = this.view().element.find("ul.km-listview");
+
+        listviews.hide()
+            .eq(this.selectedIndex)
+            .show();
+    }
+    function initForm() {
+        var body = $(".km-pane");
+        debugger;
+        //if (kendo.ui.DropDownList) {
+        //    $("select").kendoDropDownList({
+        //        // The options are needed only for the desktop demo, remove them for mobile.
+        //        //popup: { appendTo: body },
+        //        //animation: { open: { effects: body.hasClass("km-android") ? "fadeIn" : body.hasClass("km-ios") || body.hasClass("km-wp") ? "slideIn:up" : "slideIn:down" } }
+        //    });
+        //}
+
+        if (kendo.ui.Slider) {
+            $(".slider").kendoSlider({ tooltip: { enabled: false } });
+        }
+    }
+</script>

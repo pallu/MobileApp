@@ -1,0 +1,131 @@
+﻿<div data-role="view" id="erfView" data-title="ERF" layout="tabstrip-layout">
+    <div data-role="content">
+        <div class="km-scroll-container" style="-webkit-transform-origin: 0% 0%;">
+            <ul data-index="0" data-role="buttongroup" data-select="onSelect" id="select-erostep" class="km-widget km-buttongroup">
+                <li><span class="km-text">1</span></li>
+                <li><span class="km-text">2</span></li>
+                <li><span class="km-text">3</span></li>
+                <li><span class="km-text">4</span></li>
+            </ul>
+        </div>
+        <form role="form" class="form-horizontal">
+            <div class="km-listview-wrapper"> 
+            <div class="pane panel panel-default" data-style="inset" id="erfStep1">
+                <div class="panel-heading">Step 1</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="TacticID" class="col-sm-2 control-label">Tactic</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="TacticID">
+                                <option value="100">First Tactic</option>
+                                <option value="102">Second Tactic</option>
+                                <option value="103">Third Tactic</option>
+                                <option value="104">Fourth Tactic</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="TacticIDExt" class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="TacticIDExt">
+                                <option value="100">First Tactic</option>
+                                <option value="102">Second Tactic</option>
+                                <option value="103">Third Tactic</option>
+                                <option value="104">Fourth Tactic</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="CurriculumID" class="col-sm-2 control-label">Curriculum / Module</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="CurriculumID">
+                                <option value="100">First Curriculum</option>
+                                <option value="102">Second Curriculum</option>
+                                <option value="103">Third Curriculum</option>
+                                <option value="104">Fourth Curriculum</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="AddCurriculumID" class="col-sm-2 control-label">Additional Module</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="AddCurriculumID">
+                                <option value="100">First Curriculum</option>
+                                <option value="102">Second Curriculum</option>
+                                <option value="103">Third Curriculum</option>
+                                <option value="104">Fourth Curriculum</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--<a href="#erfStep2" class="btn btn-primary pull-right">Step 2 <span class="glyphicon glyphicon-play"></span></a>-->
+                </div>
+            </div>
+            </div>
+        <div class="pane panel panel-default" id="erfStep2" style="display:none">
+            <div class="panel-heading">Step 2</div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="DriverID" class="col-sm-2 control-label">Driver</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="DriverID">
+                            <option value="Date">Date</option>
+                            <option value="Speaker">Speaker</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Event Type</label>
+                    <div class="col-sm-10">
+                        <label class="radio-inline">
+                          <input type="radio" name="EventTypeID" id="inlineCheckbox1" value="LiveProgram"> Live Program
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="EventTypeID" id="inlineCheckbox2" value="WebcastProgram"> Webcast Program
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="CounterpartID" class="col-sm-2 control-label">Counterpart</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="CounterpartID">
+                            <option value="100">Counterpart 1</option>
+                            <option value="102">Counterpart 2</option>
+                            <option value="103">Counterpart 3</option>
+                            <option value="104">Counterpart 4</option>
+                        </select>
+                    </div>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <label for="DateTime 1" class="col-sm-2 control-label">Date 1</label>
+                    <div class="col-sm-10" id="DateTime1">
+                        <input type="date" />
+                        <input type="time" placeholder="time" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pane panel panel-default" id="erfStep3" style="display:none">
+            <div class="panel-heading">Step 3</div>
+            <div class="panel-body">
+
+            </div>
+        </div>
+        <div class="pane panel panel-default" id="erfStep4" style="display:none">
+            <div class="panel-heading">Step 4</div>
+            <div class="panel-body">
+
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+<script>
+    function onSelect() {
+        var panes = this.view().element.find(".pane");
+
+        panes.hide()
+            .eq(this.selectedIndex)
+            .show();
+    }
+</script>
